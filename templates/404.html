@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Erro:404 {% endblock %}
+
+
+
+
+{% block main %}
+<h1>Pagina Não Encontrada</h1>
+
+<h3>
+	{{ request_path }}
+
+</h3>
+<h3>{{ exception }}</h3>
+
+{% endblock %}
+

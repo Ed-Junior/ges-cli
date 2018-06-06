@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block title %} Update {% endblock %}
+
+{% block main %}
+
+
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form|bootstrap }}
+    <input type="submit" value="Save" />
+
+
+</form>
+{% endblock %}

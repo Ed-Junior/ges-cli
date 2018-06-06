@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} {{ object.first_name}} {% endblock %}
+
+{% block main %}
+<h1>Person detail</h1>
+
+Nome: {{ object.first_name}}<br>
+Sobrenome: {{ object.last_name}}<br>
+Doc: {{ object.doc}}
+
+<p> Date: {{now|date}} </p>
+
+
+<p><a href="{% url 'person-update' object.id %}">Update</a></p>
+<p><a href="{% url 'person-delete' object.id %}">Delete</a></p>
+
+<p><a href="{% url 'PersonList' %}">Voltar</a></p>
+
+{% endblock %}

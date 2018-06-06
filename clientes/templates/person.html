@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load filters %}
+{% load my_tags %}
+
+{% block title %} Seja Bem Vindo {% endblock %}
+
+
+{% block main %}
+
+
+
+<h2> Administração</h2>
+
+
+	<div class="container">
+	  <div class="row" >
+	    <div class="col-sm- " >
+		    <br>
+
+	    </div>
+
+
+	  <div class="col-6">
+		  <br>
+		 <ul class="list-group">
+			{% for person in person %}
+				<li class="list-group-item" >
+					<a href="{% url 'person_update' person.id %}" > {{person.first_name}} {{person.last_name}}</a>
+					<a href="{% url 'person_delete' person.id %}" class="btn btn-danger btn-delete"> Delete</a>
+
+
+
+				</li>
+			{% empty %}
+
+			    <li> {{'Lista vazia'|vazio}} </li>
+
+			{% endfor %}
+
+
+
+		  </ul>
+			<br>
+		  <a href="{% url 'person_new' %}" class="btn btn-success">Novo Usuario</a>
+	  </div>
+
+
+	    <div class="col-sm-">
+		    <h3> Olá {{ user.username}}  <a href="{% url 'logout' %}" class="btn btn-secondary">Sair</a></h3>
+
+	    </div>
+	  </div>
+	</div>
+
+{% endblock %}
